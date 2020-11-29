@@ -8,22 +8,26 @@ public class DSQueue extends Queue {
 	}
 
 	public DSQueue() {
-		this.list = new Dslist();
+		this.list = new DSList();
 	}
 
 	@Override
 	public boolean offer(Token t) {
-		return false;
+		this.list.add(t);
+		return true;
 	}
 
 	@Override
 	public Token poll() {
+		if(!isEmpty()){
+		return this.list.remove(this.list.size());
+		}
 		return null;
 	}
 
 	@Override
 	public Token peek() {
-		return null;
+		return this.list.get(this.list.size());
 	}
 
 	@Override
@@ -33,12 +37,12 @@ public class DSQueue extends Queue {
 
 	@Override
 	public int size() {
-		return 0;
+		return this.list.size();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return true;
+		return this.list.isEmpty();
 	}
 
 }

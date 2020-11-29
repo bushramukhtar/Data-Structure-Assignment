@@ -15,31 +15,32 @@ public class DSStack extends Stack {
 	}
 
 	public DSStack() {
-		
+		this.list = new DSList();
 	}
 	
 	public DSStack(DSStack other) {
-		this.list = other.list.clone();
+		this.list = other.list;
 	}
 	
 	public Token push(Token obj) {
-		return null;
+		list.add(obj);
+		return obj;
 	}
 
 	public Token peek() {
-		return null;
+		return list.get(0);
 	}
 
 	public Token pop() {
-		return null;
+		return list.remove(0);
 	}
 
 	public boolean isEmpty() {
-		return true;
+		return list.isEmpty();
 	}
 
 	public int size() {
-		return 0;
+		return list.size();
 	}
 	
 	@Override
